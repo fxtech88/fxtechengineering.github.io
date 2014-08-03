@@ -2,10 +2,10 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://fxtech.engineering
+title: fxtech electronics engineering
+subtitle: blogging for hackers.
+author: Felix Freyer
 simple_search: https://www.google.com/search
 description:
 
