@@ -4,16 +4,15 @@ require "stringex"
 
 ## -- Rsync Deploy config -- ##
 # Be sure your public key is listed in your server's ~/.ssh/authorized_keys file
-ssh_user       = "pi@192.168.178.28" # the pi@and ip-adress of your Raspberry Pi
+ssh_user       = "user@domain.com"
 ssh_port       = "22"
-document_root  = "/var/www/" ## the web root where octopress public will be placed
+document_root  = "~/website.com/"
 rsync_delete   = false
 rsync_args     = ""  # Any extra arguments to pass to rsync
-deploy_default = "push" #using rsync to deploy octopress
-
+deploy_default = "rsync"
 
 # This will be configured for you when you run config_deploy
-deploy_branch  = "master"
+deploy_branch  = "gh-pages"
 
 ## -- Misc Configs -- ##
 
