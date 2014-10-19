@@ -9,7 +9,11 @@
   <meta name="author" content="fxtech">
 
   
-  <meta name="description" content="Ziel dieses Projektes ist es an einem zu untersuchenden Patienten ein Elektrokardiogramm (EKG) aufzunehmen, dieses zu uebertragen und auf einem PC zu &hellip;">
+  <meta name="description" content="﻿&mdash;
+layout: post
+title: &ldquo;ekg&rdquo;
+date: 2014-08-19 15:33:11 +0000
+comments: true categories: Ziel dieses Projektes ist es an einem zu &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -71,7 +75,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/08/19/ekg/">Drahtloses EKG</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/10/19/ekg/">Ekg</a></h1>
     
     
       <p class="meta">
@@ -87,14 +91,24 @@
   
 
 
-<time datetime="2014-08-19T15:33:11+00:00" pubdate data-updated="true">Aug 19<sup>th</sup>, 2014</time>
+<time datetime="2014-10-19T00:00:00+00:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Ziel dieses Projektes ist es an einem zu untersuchenden Patienten ein Elektrokardiogramm (EKG) aufzunehmen, dieses zu uebertragen und auf einem PC zu visualisieren. Ausgangspunkt des Projektes war das EKG-Frontend ADS1293 von Texas Instruments.</p>
+  <div class="entry-content"><p>﻿&mdash;
+layout: post
+title: &ldquo;ekg&rdquo;
+date: 2014-08-19 15:33:11 +0000
+comments: true</p>
+
+<h2>categories: </h2>
+
+<p><img src="/images/abb0.png" title="Drahtloses EKG" ></p>
+
+<p>Ziel dieses Projektes ist es an einem zu untersuchenden Patienten ein Elektrokardiogramm (EKG) aufzunehmen, dieses zu uebertragen und auf einem PC zu visualisieren. Ausgangspunkt des Projektes war das EKG-Frontend ADS1293 von Texas Instruments.</p>
 
 <h2>Einleitung</h2>
 
@@ -135,7 +149,7 @@ Zusaetzlich ist fuer zukuenftige Anwendungen eine Funkschnittstelle vorgesehen, 
 
 <p><strong>Abbildung 3: Layout</strong></p>
 
-<p>Im endgueltigen Layout wurden alle freien Flaechen durch Massepotentialflaechen ersetzt und in zufaelligen Abstaenden wurden Vias zwischen Top und Bottom gesetzt, um Masse-kopplungen zu verhindern.</p>
+<p>Im endgueltigen Layout wurden alle freien Flaechen durch Massepotentialflaechen ersetzt und in zufaelligen Abstaenden wurden Vias zwischen Top und Bottom gesetzt, um Massekopplungen zu verhindern.</p>
 
 <h2>Aufbau</h2>
 
@@ -151,18 +165,14 @@ Zusaetzlich ist fuer zukuenftige Anwendungen eine Funkschnittstelle vorgesehen, 
 
 <h2>Aufbau der Firmware</h2>
 
-<p>Die Firmware besteht aus mehreren Modulen.</p>
+<p>Die Firmware besteht aus mehreren Modulen.
+* TI_ADS1293_register_settings.h - ADS1293 Registereinstellungen
+* TI_ADS1293.h - ADS1293 Registeradressen
+* TI_MSP430_hardware_board.h - ADS1293 Pinbelegung
+* TI_MSP430.h - ADS1293 SPI-Pinbelegung
+* main.c - Hauptschleife fuer Datenerfassung /-Verarbeitung</p>
 
-<ul>
-<li><p>TI_ADS1293_register_settings.h - ADS1293 Registereinstellungen</p></li>
-<li><p>TI_ADS1293.h - ADS1293 Registeradressen</p></li>
-<li><p>TI_MSP430_hardware_board.h - ADS1293 Pinbelegung</p></li>
-<li><p>TI_MSP430.h - ADS1293 SPI-Pinbelegung</p></li>
-<li><p>main.c - Hauptschleife fuer Datenerfassung /-Verarbeitung</p></li>
-</ul>
-
-
-<p>Die Module mit dem Praefix TI_ADS1293 sowie TI_MSP430 wurden aus dem Beispiel-Code MSP430/ADS1293 Interface Code Library v1.0 entnommen und an unsere Hardware angepasst. Das Modul main.c enthaelt die Hauptschleife der Firmware und dient zur Erfassung des EKG Signals per SPI-Schnittstelle sowie zur Kommunikation mit dem PC.</p>
+<p>Die Module mit dem Praefix TI_ADS1293 sowie TI_MSP430 wurden aus dem Beispiel-Code &lsquo;MSP430/ADS1293 Interface Code Library v1.0&rsquo; entnommen und an die verwendete Hardware angepasst. Das Modul main.c enthaelt die Hauptschleife der Firmware und dient zur Erfassung des EKG Signals per SPI-Schnittstelle sowie zur Kommunikation mit dem PC.</p>
 
 <h2>Softwaretest</h2>
 
@@ -210,7 +220,7 @@ Neben den vier Bedienelementen beinhaltet das Userinterface zwei Anzeigeelemente
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/08/19/ekg/">Drahtloses EKG</a>
+        <a href="/blog/2014/10/19/ekg/">Ekg</a>
       </li>
     
   </ul>
