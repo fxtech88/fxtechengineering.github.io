@@ -4,7 +4,7 @@
   <title><![CDATA[fxtech]]></title>
   <link href="http://fxtechengineering.github.io/atom.xml" rel="self"/>
   <link href="http://fxtechengineering.github.io/"/>
-  <updated>2014-10-19T16:59:02+00:00</updated>
+  <updated>2014-10-19T19:36:56+00:00</updated>
   <id>http://fxtechengineering.github.io/</id>
   <author>
     <name><![CDATA[fxtech]]></name>
@@ -14,10 +14,13 @@
 
   
   <entry>
+    
     <title type="html"><![CDATA[Drahtloses EKG]]></title>
     <link href="http://fxtechengineering.github.io/blog/2014/08/19/ekg/"/>
+    
     <updated>2014-08-19T15:33:11+00:00</updated>
     <id>http://fxtechengineering.github.io/blog/2014/08/19/ekg</id>
+    
     <content type="html"><![CDATA[<p><img class="center" src="http://fxtechengineering.github.io/images/abb0.png" title="Drahtloses EKG" ></p>
 
 <p>Ziel dieses Projektes ist es an einem zu untersuchenden Patienten ein Elektrokardiogramm (EKG) aufzunehmen, dieses zu uebertragen und auf einem PC zu visualisieren. Ausgangspunkt des Projektes war das EKG-Frontend ADS1293 von Texas Instruments.</p>
@@ -117,6 +120,7 @@ Neben den vier Bedienelementen beinhaltet das Userinterface zwei Anzeigeelemente
 
 <p style="text-align:center;"><strong>Abbildung 6: Labview Userinterface</strong></p>
 ]]></content>
+    
   </entry>
   
 </feed>
