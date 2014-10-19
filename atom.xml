@@ -4,7 +4,7 @@
   <title><![CDATA[fxtech]]></title>
   <link href="http://fxtechengineering.github.io/atom.xml" rel="self"/>
   <link href="http://fxtechengineering.github.io/"/>
-  <updated>2014-10-19T15:42:37+00:00</updated>
+  <updated>2014-10-19T15:51:22+00:00</updated>
   <id>http://fxtechengineering.github.io/</id>
   <author>
     <name><![CDATA[fxtech]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Ekg]]></title>
+    <title type="html"><![CDATA[Drahtloses EKG]]></title>
     <link href="http://fxtechengineering.github.io/blog/2014/08/19/ekg/"/>
     <updated>2014-08-19T15:33:11+00:00</updated>
     <id>http://fxtechengineering.github.io/blog/2014/08/19/ekg</id>
@@ -76,11 +76,15 @@ Zusaetzlich ist fuer zukuenftige Anwendungen eine Funkschnittstelle vorgesehen, 
 <h2>Aufbau der Firmware</h2>
 
 <p>Die Firmware besteht aus mehreren Modulen.
-* TI_ADS1293_register_settings.h - ADS1293 Registereinstellungen
-* TI_ADS1293.h - ADS1293 Registeradressen
-* TI_MSP430_hardware_board.h - ADS1293 Pinbelegung
-* TI_MSP430.h - ADS1293 SPI-Pinbelegung
-* main.c - Hauptschleife fuer Datenerfassung /-Verarbeitung</p>
+* TI_ADS1293_register_settings.h - ADS1293 Registereinstellungen</p>
+
+<ul>
+<li><p>TI_ADS1293.h - ADS1293 Registeradressen</p></li>
+<li><p>TI_MSP430_hardware_board.h - ADS1293 Pinbelegung</p></li>
+<li><p>TI_MSP430.h - ADS1293 SPI-Pinbelegung</p></li>
+<li><p>main.c - Hauptschleife fuer Datenerfassung /-Verarbeitung</p></li>
+</ul>
+
 
 <p>Die Module mit dem Praefix TI_ADS1293 sowie TI_MSP430 wurden aus dem Beispiel-Code MSP430/ADS1293 Interface Code Library v1.0 entnommen und an unsere Hardware angepasst. Das Modul main.c enthaelt die Hauptschleife der Firmware und dient zur Erfassung des EKG Signals per SPI-Schnittstelle sowie zur Kommunikation mit dem PC.</p>
 
