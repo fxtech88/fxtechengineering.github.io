@@ -71,7 +71,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/08/19/ekg/">Ekg</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/08/19/ekg/">Drahtloses EKG</a></h1>
     
     
       <p class="meta">
@@ -94,7 +94,7 @@
   </header>
 
 
-  <div class="entry-content"><p><img src="/images/abb0.png" title="Drahtloses EKG" ></p>
+  <div class="entry-content"><p><img class="center" src="/images/abb0.png" title="Drahtloses EKG" ></p>
 
 <p>Ziel dieses Projektes ist es an einem zu untersuchenden Patienten ein Elektrokardiogramm (EKG) aufzunehmen, dieses zu uebertragen und auf einem PC zu visualisieren. Ausgangspunkt des Projektes war das EKG-Frontend ADS1293 von Texas Instruments.</p>
 
@@ -103,7 +103,7 @@
 <p>Zunaechst werden die Grundlagen eines Elektrokardiogramms erlaeutert. Unter einem EKG versteht man die Darstellung beziehungsweise die Aufzeichnung der Summe aller elektrischen Aktivitaeten aller Herzmuskelfasern. Jeder Kontraktion des Herzens geht eine elektrische Erregung voraus, diese breitet sich ausgehend vom Sinusknoten ueber die uebrigen Herzmuskelzellen aus.
 Die elektrischen Spannungsaenderungen koennen ueber die Koerperoberflaeche gemessen werden und in einem Zeitverlauf aufgezeichnet werden. Dazu ist eine Umsetzung von einer Ionenleitung, bedingt durch extrazellulaere Fluessigkeit im Koerperinnenren, auf eine Elektronenleitung noetig. Diese Umsetzung erfolgt mit Hilfe von Elektroden, die dem Patienten auf die Koerperoberflaeche geklebt werden. In Abbildung 1 ist der typische Verlauf eines EKG schematisch dargestellt.</p>
 
-<p><img src="/images/abb1.png" title="Abbildung 1: Typischer Verlauf eines EKG" ></p>
+<p><img class="center" src="/images/abb1.png" title="Abbildung 1: Typischer Verlauf eines EKG" ></p>
 
 <p><strong>Abbildung 1: Typischer Verlauf eines EKG</strong></p>
 
@@ -123,7 +123,7 @@ Das Geraet soll weiterhin ueber einen Ein- und Ausschalter verfuegen und den Zus
 <p>Das nachstehende Blockdiagramm zeigt die Zusammenhaenge der einzelnen Komponenten auf. Das zentrale Element bilden der MSPCC430 und das EKG-Frontend ADS1293. Des Weiteren stellen der Battery Charger, der Buck-Boost Converter und der LiPo Akku die Spannungsversorgung des Systems sicher. Die restliche Peripherie dient der Signaluebertragung und der Signalumsetzung, wie beispielsweise der FTDI-Chip der die Signale von UART nach USB umsetzt.
 Zusaetzlich ist fuer zukuenftige Anwendungen eine Funkschnittstelle vorgesehen, sodass die Messwerte auch drahtlos uebertragen werden koennen.</p>
 
-<p><img src="/images/abb2.png" title="Abbildung 2: Blockdiagramm" ></p>
+<p><img class="center" src="/images/abb2.png" title="Abbildung 2: Blockdiagramm" ></p>
 
 <p><strong>Abbildung 2: Blockdiagramm</strong></p>
 
@@ -133,7 +133,7 @@ Zusaetzlich ist fuer zukuenftige Anwendungen eine Funkschnittstelle vorgesehen, 
 
 <p>Die Platinengroesse wurde so entworfen, dass die Platine spaeter in das dafuer vorgesehene Gehaeuse passt. Dann wurden USB und D-Sub-Stecker an die Platinenseiten der Gehaeuseoeffnungen platziert. Der ADS-1293-Chip wurde in die Naehe des D-Sub-Steckers platziert und der Mikrocontroller in der Naehe der SMD-Antenne. Die Ladeschaltung und der Schaltregler befinden sich am oberen Rand der Platine. Bei jedem Bauteil wurde darauf geachtet, dass die Abblockkondensatoren moeglichst nah am Bauteil sitzen. Siehe nachfolgende Abbildung.</p>
 
-<p><img src="/images/abb3.png" title="Abbildung 3: Layout" ></p>
+<p><img class="center" src="/images/abb3.png" title="Abbildung 3: Layout" ></p>
 
 <p><strong>Abbildung 3: Layout</strong></p>
 
@@ -143,7 +143,7 @@ Zusaetzlich ist fuer zukuenftige Anwendungen eine Funkschnittstelle vorgesehen, 
 
 <p>In dieser Version geht die USB-Schnittstelle ueber den UART-Chip direkt mit 5V an den Mikrocontroller. Da, dieser jedoch nur mit maximal 3,3V betrieben werden darf, wurde ein provisorischer Pegelwandler zwischengeschaltet, der in Schaltung und Layout nicht vorhanden ist.</p>
 
-<p><img src="/images/abb4.png" title="Abbildung 4: Fertige Platine mit Pegelwandler" ></p>
+<p><img class="center" src="/images/abb4.png" title="Abbildung 4: Fertige Platine mit Pegelwandler" ></p>
 
 <p><strong>Abbildung 4: Fertige Platine mit Pegelwandler</strong></p>
 
@@ -153,12 +153,16 @@ Zusaetzlich ist fuer zukuenftige Anwendungen eine Funkschnittstelle vorgesehen, 
 
 <h2>Aufbau der Firmware</h2>
 
-<p>Die Firmware besteht aus mehreren Modulen.
-* TI_ADS1293_register_settings.h - ADS1293 Registereinstellungen
-* TI_ADS1293.h - ADS1293 Registeradressen
-* TI_MSP430_hardware_board.h - ADS1293 Pinbelegung
-* TI_MSP430.h - ADS1293 SPI-Pinbelegung
-* main.c - Hauptschleife fuer Datenerfassung /-Verarbeitung</p>
+<p>Die Firmware besteht aus mehreren Modulen.</p>
+
+<ul>
+<li><p>TI_ADS1293_register_settings.h - ADS1293 Registereinstellungen</p></li>
+<li><p>TI_ADS1293.h - ADS1293 Registeradressen</p></li>
+<li><p>TI_MSP430_hardware_board.h - ADS1293 Pinbelegung</p></li>
+<li><p>TI_MSP430.h - ADS1293 SPI-Pinbelegung</p></li>
+<li><p>main.c - Hauptschleife fuer Datenerfassung /-Verarbeitung</p></li>
+</ul>
+
 
 <p>Die Module mit dem Praefix TI_ADS1293 sowie TI_MSP430 wurden aus dem Beispiel-Code &lsquo;MSP430/ADS1293 Interface Code Library v1.0&rsquo; entnommen und an die verwendete Hardware angepasst. Das Modul main.c enthaelt die Hauptschleife der Firmware und dient zur Erfassung des EKG Signals per SPI-Schnittstelle sowie zur Kommunikation mit dem PC.</p>
 
@@ -167,7 +171,7 @@ Zusaetzlich ist fuer zukuenftige Anwendungen eine Funkschnittstelle vorgesehen, 
 <p>Im Softwaretest wurde zunaechst die korrekte Messwertaufnahme des ADS1293 EKG-Frontends ueberprueft. Dazu wurde die Datenflusssteuerung mittels Software-Handshake entfernt, sodass die aufgenommenen Abtastwerte einfach per UART an den PC weitergeleitet werden konnten. Am PC wurden die empfangenen Messwerte ueber ein serielles Terminalprogramm eingelesen und gespeichert.
 Die gespeicherten Messwerte konnten nun mit einem von Steffen zur Verfuegung gestellten Matlab Skript ausgewertet und dargestellt werden:</p>
 
-<p><img src="/images/abb5.png" title="Abbildung 5: SW Test mit Matlab" ></p>
+<p><img class="center" src="/images/abb5.png" title="Abbildung 5: SW Test mit Matlab" ></p>
 
 <p><strong>Abbildung 5: SW Test mit Matlab</strong></p>
 
@@ -185,7 +189,7 @@ Neben den vier Bedienelementen beinhaltet das Userinterface zwei Anzeigeelemente
 
 <p>In Abbildung 6 ist das Userinterface dargestellt. Auf der linken Seite befinden sich die vier Bedienelemente, rechts daneben die beiden Anzeigeelemente.</p>
 
-<p><img src="/images/abb6.png" title="Abbildung 6: Labview Userinterface" ></p>
+<p><img class="center" src="/images/abb6.png" title="Abbildung 6: Labview Userinterface" ></p>
 
 <p><strong>Abbildung 6: Labview Userinterface</strong></p>
 </div>
@@ -208,7 +212,7 @@ Neben den vier Bedienelementen beinhaltet das Userinterface zwei Anzeigeelemente
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/08/19/ekg/">Ekg</a>
+        <a href="/blog/2014/08/19/ekg/">Drahtloses EKG</a>
       </li>
     
   </ul>
