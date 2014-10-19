@@ -4,7 +4,7 @@
   <title><![CDATA[fxtech]]></title>
   <link href="http://fxtechengineering.github.io/atom.xml" rel="self"/>
   <link href="http://fxtechengineering.github.io/"/>
-  <updated>2014-10-19T16:37:26+00:00</updated>
+  <updated>2014-10-19T16:42:05+00:00</updated>
   <id>http://fxtechengineering.github.io/</id>
   <author>
     <name><![CDATA[fxtech]]></name>
@@ -15,18 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[Ekg]]></title>
-    <link href="http://fxtechengineering.github.io/blog/2014/10/19/ekg/"/>
-    <updated>2014-10-19T00:00:00+00:00</updated>
-    <id>http://fxtechengineering.github.io/blog/2014/10/19/ekg</id>
-    <content type="html"><![CDATA[<p>﻿&mdash;
-layout: post
-title: &ldquo;ekg&rdquo;
-date: 2014-08-19 15:33:11 +0000
-comments: true</p>
-
-<h2>categories: </h2>
-
-<p><img src="http://fxtechengineering.github.io/images/abb0.png" title="Drahtloses EKG" ></p>
+    <link href="http://fxtechengineering.github.io/blog/2014/08/19/ekg/"/>
+    <updated>2014-08-19T15:33:11+00:00</updated>
+    <id>http://fxtechengineering.github.io/blog/2014/08/19/ekg</id>
+    <content type="html"><![CDATA[<p><img src="http://fxtechengineering.github.io/images/abb0.png" title="Drahtloses EKG" ></p>
 
 <p>Ziel dieses Projektes ist es an einem zu untersuchenden Patienten ein Elektrokardiogramm (EKG) aufzunehmen, dieses zu uebertragen und auf einem PC zu visualisieren. Ausgangspunkt des Projektes war das EKG-Frontend ADS1293 von Texas Instruments.</p>
 
