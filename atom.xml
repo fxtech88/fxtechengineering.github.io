@@ -4,7 +4,7 @@
   <title><![CDATA[fxtech]]></title>
   <link href="http://fxtechengineering.github.io/atom.xml" rel="self"/>
   <link href="http://fxtechengineering.github.io/"/>
-  <updated>2014-10-19T15:51:22+00:00</updated>
+  <updated>2014-10-19T15:55:08+00:00</updated>
   <id>http://fxtechengineering.github.io/</id>
   <author>
     <name><![CDATA[fxtech]]></name>
@@ -75,10 +75,10 @@ Zusaetzlich ist fuer zukuenftige Anwendungen eine Funkschnittstelle vorgesehen, 
 
 <h2>Aufbau der Firmware</h2>
 
-<p>Die Firmware besteht aus mehreren Modulen.
-* TI_ADS1293_register_settings.h - ADS1293 Registereinstellungen</p>
+<p>Die Firmware besteht aus mehreren Modulen.</p>
 
 <ul>
+<li><p>TI_ADS1293_register_settings.h - ADS1293 Registereinstellungen</p></li>
 <li><p>TI_ADS1293.h - ADS1293 Registeradressen</p></li>
 <li><p>TI_MSP430_hardware_board.h - ADS1293 Pinbelegung</p></li>
 <li><p>TI_MSP430.h - ADS1293 SPI-Pinbelegung</p></li>
