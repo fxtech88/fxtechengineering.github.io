@@ -4,7 +4,7 @@
   <title><![CDATA[fxtech]]></title>
   <link href="http://fxtechengineering.github.io/atom.xml" rel="self"/>
   <link href="http://fxtechengineering.github.io/"/>
-  <updated>2014-12-19T12:29:25+00:00</updated>
+  <updated>2014-12-19T12:32:57+00:00</updated>
   <id>http://fxtechengineering.github.io/</id>
   <author>
     <name><![CDATA[fxtech]]></name>
@@ -56,7 +56,7 @@ Nachdem die verwendete Hardware beschrieben wurde, folgt nun die entwickelte And
 Für zukünftige Erweiterungen können die „BenQ RS232 Commands“ verwendet werden.</p>
 
 <p>Download:
-<a href ="fxtech.engineering/downloads/BeamerRemote.apk">BeamerRemote.apk</a></p>
+<a href ="http://fxtechengineering.github.io/downloads/BeamerRemote.apk">BeamerRemote.apk</a></p>
 ]]></content>
     
   </entry>
