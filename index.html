@@ -9,7 +9,9 @@
   <meta name="author" content="fxtech">
 
   
-  <meta name="description" content="Ziel dieses Projektes ist es die Beschleunigung in 3 Achsen zu messen und numerisch, sowie grafisch auszugeben. Die Beschleunigung ist eine &hellip;">
+  <meta name="description" content="Die folgende Anleitung zeigt den Aufbau einer Gmail-Anzeige aus folgenden Komponenten:
+* Cordwood Puzzle von Boldport
+* Arduino (beliebig) Abbildung &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +68,336 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2014/12/20/cordwood-puzzle-gmail-anzeige/">Cordwood Puzzle Gmail-Anzeige</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-20T15:16:22+00:00" pubdate data-updated="true">Dec 20<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Die folgende Anleitung zeigt den Aufbau einer Gmail-Anzeige aus folgenden Komponenten:
+* <a href ="http://www.boldport.com/shop/cordwood-puzzle-first-edition">Cordwood Puzzle von Boldport</a>
+* Arduino (beliebig)</p>
+
+<p><img class="center" src="/images/notifier0.jpg" title="Abbildung 1: CordwoodPuzzle von Boldport" ></p>
+
+<p style="text-align:center;"><strong>Abbildung 4: CordwoodPuzzle von Boldport</strong></p>
+
+<p>Die sechs LEDs werden über separate Pins vom Arduino gesteuert. Für den Einsatz als Gmail-Anzeige wird eine einfache Ampelschaltung vorgesehen.</p>
+
+<figure class='code'><figcaption><span>Arduino Firmware</span><a href='http://fluuux.de/2012/09/wir-basteln-uns-einen-arduino-gmail-notifier/'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/*</span>
+</span><span class='line'><span class="cm">  GetGMail</span>
+</span><span class='line'><span class="cm">  Dieses Sketch wartet auf ankommende Signale überd en seriellen Port</span>
+</span><span class='line'><span class="cm">  Wird ein M empfangen dann fängt eine RGB LED an im Takt zu blinken und</span>
+</span><span class='line'><span class="cm">  dabei ihre Farbe zu ändern. Wenn ein N empfangen wird, dann wird die LED </span>
+</span><span class='line'><span class="cm">  abgeschaltet.</span>
+</span><span class='line'><span class="cm"> </span>
+</span><span class='line'><span class="cm">  Zu diesem Script gehört das Python-Script check-gmail.py das minütlich durch einen</span>
+</span><span class='line'><span class="cm">  CronJob aufgerufen wird. Das Python-Script  verbindet sich zum Google-Mail-Server und</span>
+</span><span class='line'><span class="cm">  fragt ab ob ungelesene eMails im Posteingang sind. Je nach Wert wird ein M oder ein N </span>
+</span><span class='line'><span class="cm">  an der seriellen Port gesendet. </span>
+</span><span class='line'><span class="cm">*/</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="n">greenled_1</span> <span class="o">=</span> <span class="n">A13</span><span class="p">;</span> <span class="c1">//Led&#39;s and pins</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">yellowled_1</span> <span class="o">=</span> <span class="n">A14</span><span class="p">;</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">redled_1</span> <span class="o">=</span> <span class="n">A15</span><span class="p">;</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">greenled_2</span> <span class="o">=</span> <span class="n">A12</span><span class="p">;</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">yellowled_2</span> <span class="o">=</span> <span class="n">A11</span><span class="p">;</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">redled_2</span> <span class="o">=</span> <span class="n">A10</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="n">val</span>      <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                      <span class="c1">// Wert aus dem seriellen Anschluss zu lesen</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">DELAY</span>    <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>                    <span class="c1">// Intervall zwischen Wechsel der Farben</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="nf">setup</span> <span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'> <span class="n">pinMode</span><span class="p">(</span><span class="n">greenled_1</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span> <span class="c1">//Pinmodes of the leds</span>
+</span><span class='line'> <span class="n">pinMode</span><span class="p">(</span><span class="n">yellowled_1</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'> <span class="n">pinMode</span><span class="p">(</span><span class="n">redled_1</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'> <span class="n">pinMode</span><span class="p">(</span><span class="n">greenled_2</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'> <span class="n">pinMode</span><span class="p">(</span><span class="n">yellowled_2</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'> <span class="n">pinMode</span><span class="p">(</span><span class="n">redled_2</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'> <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'> <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'> <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'> <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'> <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'> <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span> <span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">Serial</span><span class="p">.</span><span class="n">flush</span> <span class="p">();</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="nf">loop</span> <span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="n">getNewMails</span><span class="p">(</span><span class="n">DELAY</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="nf">getNewMails</span><span class="p">(</span><span class="kt">int</span> <span class="n">Pause</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">())</span>
+</span><span class='line'>    <span class="n">val</span> <span class="o">=</span> <span class="n">Serial</span><span class="p">.</span><span class="n">read</span><span class="p">()</span><span class="o">-</span><span class="mi">48</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;eMails: &quot;</span><span class="o">+</span><span class="n">String</span><span class="p">(</span><span class="n">val</span><span class="p">));</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>   <span class="c1">//Green on</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>   <span class="c1">//Green on</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>     <span class="c1">//Red off</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>     <span class="c1">//Red off</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span> <span class="c1">//Yellow off</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span> <span class="c1">//Yellow off</span>
+</span><span class='line'>    <span class="n">delay</span><span class="p">(</span><span class="n">Pause</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>   <span class="c1">//Green off</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>   <span class="c1">//Green off</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>     <span class="c1">//Red off</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>     <span class="c1">//Red off</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>   <span class="c1">//Yellow on</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>   <span class="c1">//Yellow on</span>
+</span><span class='line'>    <span class="n">delay</span><span class="p">(</span><span class="n">Pause</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>     <span class="c1">//Red on</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>     <span class="c1">//Red on</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span> <span class="c1">//Yellow off</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span> <span class="c1">//Yellow off</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>   <span class="c1">//Green off</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>   <span class="c1">//Green off</span>
+</span><span class='line'>    <span class="n">delay</span><span class="p">(</span><span class="n">Pause</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">else</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Nach der Programmierung kann der Arduino an den PC angeschlossen und das Python-Skript zur Gmail-Abfrage ausgeführt werden.</p>
+
+<p><img class="center" src="/images/notifier1.jpg" title="Abbildung 2: Gmail-Anzeige mit CordwoodPuzzle" ></p>
+
+<p style="text-align:center;"><strong>Abbildung 2: Gmail-Anzeige mit CordwoodPuzzle</strong></p>
+
+<p>:</p>
+
+<figure class='code'><figcaption><span>Python-Skript für Gmail-Abruf</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python2.7</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">serial</span><span class="o">,</span> <span class="nn">feedparser</span><span class="o">,</span> <span class="nn">time</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">SERIALPORT</span> <span class="o">=</span> <span class="s">&quot;/dev/tty.usbmodemfd121&quot;</span> <span class="c"># Serieller Port (Bitte anpassen)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Seriellen Port konfigurieren</span>
+</span><span class='line'><span class="k">try</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">ser</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">Serial</span><span class="p">(</span><span class="n">SERIALPORT</span><span class="p">,</span> <span class="mi">9600</span><span class="p">)</span>
+</span><span class='line'><span class="k">except</span> <span class="n">serial</span><span class="o">.</span><span class="n">SerialException</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">auth_handler</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">HTTPBasicAuthHandler</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#Hier die Zugangsdaten zum GMail-Account eintragen</span>
+</span><span class='line'><span class="n">auth_handler</span><span class="o">.</span><span class="n">add_password</span><span class="p">(</span><span class="s">&#39;New mail feed&#39;</span><span class="p">,</span> <span class="s">&#39;https://mail.google.com/&#39;</span><span class="p">,</span><span class="s">&#39;BENUTZERNAME&#39;</span><span class="p">,</span> <span class="s">&#39;PASSWORT&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">opener</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">auth_handler</span><span class="p">)</span>
+</span><span class='line'><span class="n">feed_file</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;https://mail.google.com/mail/feed/atom/&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Feed mit feedparser parsen</span>
+</span><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="n">feedparser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">feed_file</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#Anzahl der ungelesenen Gmails</span>
+</span><span class='line'><span class="n">newmails</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">feed</span><span class="o">.</span><span class="n">fullcount</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Senden der Anzahl der ungelesenen</span>
+</span><span class='line'><span class="c"># Gmails ueber den seriellen Port</span>
+</span><span class='line'><span class="k">if</span> <span class="n">newmails</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class='line'>  <span class="n">ser</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">newmails</span><span class="p">))</span>
+</span><span class='line'>  <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Anzahl der Gmails, Betreff und Autor im Terminal ausgeben</span>
+</span><span class='line'>  <span class="k">print</span> <span class="s">&#39;Anzahl Gmails:&#39;</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">feed</span><span class="o">.</span><span class="n">fullcount</span>
+</span><span class='line'>  <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">entries</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">print</span> <span class="s">&#39;----------------------------------------------&#39;</span>
+</span><span class='line'>    <span class="k">print</span> <span class="s">&#39;Author: &#39;</span><span class="p">,</span> <span class="n">entry</span><span class="o">.</span><span class="n">author</span>
+</span><span class='line'>    <span class="k">print</span> <span class="s">&#39;Betreff:&#39;</span><span class="p">,</span> <span class="n">entry</span><span class="o">.</span><span class="n">title</span>
+</span><span class='line'><span class="k">else</span><span class="p">:</span>
+</span><span class='line'>  <span class="n">ser</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># seriellen Port schliessen</span>
+</span><span class='line'><span class="n">ser</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -367,6 +699,10 @@ Neben den vier Bedienelementen beinhaltet das Userinterface zwei Anzeigeelemente
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/12/20/cordwood-puzzle-gmail-anzeige/">Cordwood Puzzle Gmail-Anzeige</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/12/20/intelligenter-beschleunigungssensor/">Intelligenter Beschleunigungssensor</a>
