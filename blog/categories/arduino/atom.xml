@@ -4,7 +4,7 @@
   <title><![CDATA[Category: arduino | fxtech]]></title>
   <link href="http://fxtechengineering.github.io/blog/categories/arduino/atom.xml" rel="self"/>
   <link href="http://fxtechengineering.github.io/"/>
-  <updated>2014-12-20T15:43:17+00:00</updated>
+  <updated>2014-12-20T16:15:44+00:00</updated>
   <id>http://fxtechengineering.github.io/</id>
   <author>
     <name><![CDATA[fxtech]]></name>
@@ -18,7 +18,7 @@
     <link href="http://fxtechengineering.github.io/blog/2014/12/20/cordwood-puzzle-gmail-anzeige/"/>
     <updated>2014-12-20T15:16:22+00:00</updated>
     <id>http://fxtechengineering.github.io/blog/2014/12/20/cordwood-puzzle-gmail-anzeige</id>
-    <content type="html"><![CDATA[<p>Die folgende Anleitung zeigt den Aufbau einer Gmail-Anzeige aus folgenden Komponenten:</p>
+    <content type="html"><![CDATA[<p>Diese Anleitung zeigt den Aufbau einer Benachrichtigungsanzeige für Gmail aus folgenden Komponenten:</p>
 
 <ul>
 <li><p><a href ="http://www.boldport.com/shop/cordwood-puzzle-first-edition">Cordwood Puzzle von Boldport</a></p></li>
@@ -28,7 +28,7 @@
 
 <p><img class="center" src="/images/notifier0.jpg" title="Abbildung 1: CordwoodPuzzle von Boldport" ></p>
 
-<p style="text-align:center;"><strong>Abbildung 4: CordwoodPuzzle von Boldport</strong></p>
+<p style="text-align:center;"><strong>Abbildung 1: CordwoodPuzzle von Boldport</strong></p>
 
 <p>Die sechs LEDs werden über separate Pins vom Arduino gesteuert. Für den Einsatz als Gmail-Anzeige wird eine einfache Ampelschaltung vorgesehen.</p>
 
