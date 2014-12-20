@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: labview | fxtech]]></title>
+  <link href="http://fxtechengineering.github.io/blog/categories/labview/atom.xml" rel="self"/>
+  <link href="http://fxtechengineering.github.io/"/>
+  <updated>2014-12-20T08:16:11+00:00</updated>
+  <id>http://fxtechengineering.github.io/</id>
+  <author>
+    <name><![CDATA[fxtech]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Intelligenter Beschleunigungssensor]]></title>
+    <link href="http://fxtechengineering.github.io/blog/2014/12/20/intelligenter-beschleunigungssensor/"/>
+    <updated>2014-12-20T08:14:16+00:00</updated>
+    <id>http://fxtechengineering.github.io/blog/2014/12/20/intelligenter-beschleunigungssensor</id>
+    <content type="html"><![CDATA[<p>Ziel dieses Projektes ist es die Beschleunigung in 3 Achsen zu messen und numerisch, sowie grafisch auszugeben. Die Beschleunigung ist eine physikalische Größe die in vielen Bereichen der Technik eine wichtige Rolle spielt, sodass sich etliche denkbare Anwendungsszenarien ergeben.</p>
+
+<h2>Hardware</h2>
+
+<p>Das Arduino Board, welches für dieses Projekt verwendet wird, arbeitet auf der Basis des Atmega1280. Der große Vorteil des Arduino Boards liegt darin, dass die Sensordaten einfach über die USB Schnittstelle auf dem PC empfangen werden können. Zunächst wird per Software die Kommunikation zwischen Controller und Sensor realisiert, dabei kommt der I²C - Bus zum Einsatz. Diese so empfangen Sensormesswerte werden im nächsten Schritt mit Hilfe der UART - Schnittstelle des Controllers per USB an den PC gesendet. Der schematische Kommunikationsaufbau ist in Abbildung 1 dargestellt.</p>
+
+<p><img class="center" src="/images/adxl.png" title="Abbildung 1: ADXL345 Kommunikationsaufbau" ></p>
+
+<p style="text-align:center;"><strong>Abbildung 1: ADXL345 Kommunikationsaufbau</strong></p>
+
+<p>Der ADXL345 ist ein dreiachsiger Beschleunigungssensor, der einen Messbereich von +/- 16 g umfasst. Der Sensor besteht aus einer mikromechanischen Polysiliziumstruktur, welche auf einen Siliziumwafer aufgebracht ist. Das Messprinzip basiert auf der Messungen eines differentiellen Kondensators. Der Sensor und das Arduino Board sind folgendermaßen verschaltet:</p>
+
+<p><img class="center" src="/images/adxl_arduino.png" title="Abbildung 2: ADXL345 Verbindung mit Arduino" ></p>
+
+<p style="text-align:center;"><strong>Abbildung 2: ADXL345 Verbindung mit Arduino</strong></p>
+
+<p>Jeweils die Datenleitung (SDA) und die Taktleitung (SCL) des Sensors und der entsprechende Pin der Schnittstelle des Atmega1280 sind miteinander verbunden. Die SDO Leitung wird lediglich für die Kommunikation per SPI verwendet und wird deshalb auf Masse gezogen. Die beiden Interrupt Leitungen INT1 und INT2 werden verwendet und  sind deshlab hochohmig geschaltet. Da nur ein Beschleunigungssensor verwendet wird, wird die Chip Select Leitung (CS) zusammen mit der VCC Leitung auf 3,3V gelegt.</p>
+
+<h2>Software</h2>
+
+<p>Nachdem nun die Hardware sowie das Messprinzip beschrieben wurde, wird in diesem Kapitel das Lösungskonzept und die softwaretechnische Realisierung erläutert.
+Das Projekt besteht aus zwei Programmen: Der Firmware des Arduinos, sowie der LabVIEW Applikation am PC. Die Firmware des Arduinos ist bereits im LabVIEW VI Package Manager Addon „LabVIEW Interface for Arduino“ enthalten. Mithilfe dieses Addons kann der Mikrocontroller direkt über LabVIEW programmiert und dessen GPIO-Ports sowie Peripherie angesteuert werden. Nach der Installation des Labview Addons befindet sich die Arduino Firmware unter Windows in folgendem Verzeichnis:
+C:\Program Files\National Instruments\LabVIEW 2010\vi.lib\LabVIEW Interface for Arduino\Firmware\LVIFA_Base\LVIFA_Base.pde</p>
+
+<p>Bevor der Arduino via LabVIEW angesteuert werden kann muss jedoch zunächst die Firmware mittels der Arduino IDE auf dem Mikrocontroller programmiert werden.</p>
+
+<p><img class="center" src="/images/adxl_frontend.png" title="Abbildung 3: LabVIEW VI - Frontend" ></p>
+
+<p style="text-align:center;"><strong>Abbildung 3: LabVIEW VI - Frontend</strong></p>
+
+<p>Das Frontend verfügt lediglich über ein Bedienelement, nämlich über einen Stop Button. Die restlichen Elemente sind allesamt Anzeigeelemente und dienen zur Visualisierung der Messwerte. Das Frontend ist in Abbildung 3 dargestellt. Der Stop Button links unten im Frontend, blau umrandet, stoppt das laufende Programm und die USB Verbindung zum Arudino Board, zudem werden die Anzeigeelemente zurückgesetzt. Die Legende, schwarz markiert, zeigt welche Kurveder beiden Graphen welcher Achse des Beschleunigungssensor zugeordnet ist.
+Die Visualisierung der Beschleunigungswerte geschiet in den verbleibenden drei Anzeigeelementen. Zunächst werden die unbearbeiteten Sensordaten in dem Graph dargestellt der grün umrandet ist. In Abbildung 3 kann man bereits erkennen, dass es während der Messung immer wieder zu unerwünschten Peaks kommt. Aus diesem Grund ist eine zusätzliche Verarbeitung der Sensordaten notwendig.
+Die geglätteten Signale werden im rot markierten Graphen dargestellt.
+Schließlich wird im letzten Graphen, hier gelb hervorgehoben, eine 3D Grafik aus den Sensordaten erzeugt. Diese gibt die relative Lage zur Startposition des Sensors an. Alle Graphen zeigen die Messwerte in Echtzeit an.</p>
+
+<p>Im Folgenden wird das Blockdiagramm der LabVIEW VI erläutert:</p>
+
+<p><img class="center" src="/images/adxl_blockdiagramm.png" title="Abbildung 4: LabVIEW VI - Blockdiagramm" ></p>
+
+<p style="text-align:center;"><strong>Abbildung 4: LabVIEW VI - Blockdiagramm</strong></p>
+
+<p>Grundsätzlich hat das Blockdiagramm ein Top-Down Design.
+Oben links beginnt die Hardwareinitialisierung (HW-Init), welche sich außerhalb der Haupt-While-Schleife befindet und nur einmal beim Start des Programms ausgeführt wird.
+Bei der HW-Init wird zunächst die COM-Schnittstelle für den Arduino geöffnet. Dabei werden Baudrate und COM-Schnittstelle ausgewählt sowie I²C Kommandos an den Arduino gesendet um später Sensordaten zu empfangen. In der Sub VI für die Datenerfassung werden die Daten aus dem FIFO des Beschleunigungssensors gelesen und anschließend in einem Array gespeichert. Die empfangenen Daten müssen nun zur Anschaulichkeit für die grafische Darstellung skaliert werden. Dabei entspricht ein Messwert von 255 einem Beschleunigungswert von 1 g. Zur besseren grafischen Darstellung der Beschleunigung mittels 3D Würfel müssen die Messwerte zunächst geglättet werden. Dafür ist eine Mittelwertbildung der letzten 5 Messwerte ausreichend, wie sich in der Praxis gezeigt hat. Des Weiteren ist für die Transformation des 3D Würfels eine Winkelberechnung notwendig.</p>
+]]></content>
+  </entry>
+  
+</feed>

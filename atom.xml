@@ -4,7 +4,7 @@
   <title><![CDATA[fxtech]]></title>
   <link href="http://fxtechengineering.github.io/atom.xml" rel="self"/>
   <link href="http://fxtechengineering.github.io/"/>
-  <updated>2014-12-20T08:11:13+00:00</updated>
+  <updated>2014-12-20T08:16:11+00:00</updated>
   <id>http://fxtechengineering.github.io/</id>
   <author>
     <name><![CDATA[fxtech]]></name>
@@ -18,18 +18,10 @@
     <title type="html"><![CDATA[Intelligenter Beschleunigungssensor]]></title>
     <link href="http://fxtechengineering.github.io/blog/2014/12/20/intelligenter-beschleunigungssensor/"/>
     
-    <updated>2014-12-20T00:00:00+00:00</updated>
+    <updated>2014-12-20T08:14:16+00:00</updated>
     <id>http://fxtechengineering.github.io/blog/2014/12/20/intelligenter-beschleunigungssensor</id>
     
-    <content type="html"><![CDATA[<p>﻿&mdash;
-layout: post
-title: &ldquo;Intelligenter Beschleunigungssensor&rdquo;
-date: 2014-12-20 08:08:29 +0000
-comments: true</p>
-
-<h2>categories: arduino LabVIEW ADXL345</h2>
-
-<p>Ziel dieses Projektes ist es die Beschleunigung in 3 Achsen zu messen und numerisch, sowie grafisch auszugeben. Die Beschleunigung ist eine physikalische Größe die in vielen Bereichen der Technik eine wichtige Rolle spielt, sodass sich etliche denkbare Anwendungsszenarien ergeben.</p>
+    <content type="html"><![CDATA[<p>Ziel dieses Projektes ist es die Beschleunigung in 3 Achsen zu messen und numerisch, sowie grafisch auszugeben. Die Beschleunigung ist eine physikalische Größe die in vielen Bereichen der Technik eine wichtige Rolle spielt, sodass sich etliche denkbare Anwendungsszenarien ergeben.</p>
 
 <h2>Hardware</h2>
 
