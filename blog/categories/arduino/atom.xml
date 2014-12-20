@@ -4,7 +4,7 @@
   <title><![CDATA[Category: arduino | fxtech]]></title>
   <link href="http://fxtechengineering.github.io/blog/categories/arduino/atom.xml" rel="self"/>
   <link href="http://fxtechengineering.github.io/"/>
-  <updated>2014-12-20T15:32:48+00:00</updated>
+  <updated>2014-12-20T15:40:38+00:00</updated>
   <id>http://fxtechengineering.github.io/</id>
   <author>
     <name><![CDATA[fxtech]]></name>
@@ -90,28 +90,28 @@ void getNewMails(int Pause)
 
     if (val &gt; 0) 
     {
-      Serial.println("eMails: "+String(val));
-      digitalWrite(greenled_1, HIGH);   // Green on
-      digitalWrite(greenled_2, HIGH);
-      digitalWrite(redled_1, LOW);      // Red off
-      digitalWrite(redled_2, LOW);
-      digitalWrite(yellowled_1, LOW);   // Yellow off
-      digitalWrite(yellowled_2, LOW);
-      delay(Pause);
-      digitalWrite(greenled_1, LOW);    // Green off
-      digitalWrite(greenled_2, LOW);    
-      digitalWrite(redled_1, LOW);      // Red off
-      digitalWrite(redled_2, LOW);      
-      digitalWrite(yellowled_1, HIGH);  // Yellow on
-      digitalWrite(yellowled_2, HIGH); 
-      delay(Pause);
-      digitalWrite(redled_1, HIGH);     // Red on
-      digitalWrite(redled_2, HIGH);     
-      digitalWrite(yellowled_1, LOW);   // Yellow off
-      digitalWrite(yellowled_2, LOW);   
-      digitalWrite(greenled_1, LOW);    // Green off
-      digitalWrite(greenled_2, LOW);    
-      delay(Pause);
+        Serial.println("eMails: "+String(val));
+        digitalWrite(greenled_1, HIGH);   // Green on
+        digitalWrite(greenled_2, HIGH);
+        digitalWrite(redled_1, LOW);      // Red off
+        digitalWrite(redled_2, LOW);
+        digitalWrite(yellowled_1, LOW);   // Yellow off
+        digitalWrite(yellowled_2, LOW);
+        delay(Pause);
+        digitalWrite(greenled_1, LOW);    // Green off
+        digitalWrite(greenled_2, LOW);  
+        digitalWrite(redled_1, LOW);      // Red off
+        digitalWrite(redled_2, LOW);      
+        digitalWrite(yellowled_1, HIGH);  // Yellow on
+        digitalWrite(yellowled_2, HIGH); 
+        delay(Pause);
+        digitalWrite(redled_1, HIGH);     // Red on
+        digitalWrite(redled_2, HIGH);     
+        digitalWrite(yellowled_1, LOW);   // Yellow off
+        digitalWrite(yellowled_2, LOW);   
+        digitalWrite(greenled_1, LOW);    // Green off
+        digitalWrite(greenled_2, LOW);    
+        delay(Pause);
     }
     else
     {

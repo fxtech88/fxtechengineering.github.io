@@ -262,28 +262,28 @@ Arduino (beliebig) Abbildung 4: &hellip;">
 </span><span class='line'>
 </span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
 </span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>      <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;eMails: &quot;</span><span class="o">+</span><span class="n">String</span><span class="p">(</span><span class="n">val</span><span class="p">));</span>
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>   <span class="c1">// Green on</span>
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>      <span class="c1">// Red off</span>
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>   <span class="c1">// Yellow off</span>
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">delay</span><span class="p">(</span><span class="n">Pause</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>    <span class="c1">// Green off</span>
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>  
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>      <span class="c1">// Red off</span>
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>  <span class="c1">// Yellow on</span>
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">delay</span><span class="p">(</span><span class="n">Pause</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>     <span class="c1">// Red on</span>
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>   <span class="c1">// Yellow off</span>
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>    <span class="c1">// Green off</span>
-</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">delay</span><span class="p">(</span><span class="n">Pause</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;eMails: &quot;</span><span class="o">+</span><span class="n">String</span><span class="p">(</span><span class="n">val</span><span class="p">));</span>
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>   <span class="c1">// Green on</span>
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>      <span class="c1">// Red off</span>
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>   <span class="c1">// Yellow off</span>
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">delay</span><span class="p">(</span><span class="n">Pause</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>    <span class="c1">// Green off</span>
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>  
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>      <span class="c1">// Red off</span>
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>  <span class="c1">// Yellow on</span>
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">delay</span><span class="p">(</span><span class="n">Pause</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>     <span class="c1">// Red on</span>
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">redled_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>   <span class="c1">// Yellow off</span>
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">yellowled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>    <span class="c1">// Green off</span>
+</span><span class='line'>        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">greenled_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">delay</span><span class="p">(</span><span class="n">Pause</span><span class="p">);</span>
 </span><span class='line'>    <span class="p">}</span>
 </span><span class='line'>    <span class="k">else</span>
 </span><span class='line'>    <span class="p">{</span>
