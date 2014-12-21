@@ -4,7 +4,7 @@
   <title><![CDATA[Category: bluetooth | fxtech]]></title>
   <link href="http://fxtechengineering.github.io/blog/categories/bluetooth/atom.xml" rel="self"/>
   <link href="http://fxtechengineering.github.io/"/>
-  <updated>2014-12-20T16:15:44+00:00</updated>
+  <updated>2014-12-21T11:48:34+00:00</updated>
   <id>http://fxtechengineering.github.io/</id>
   <author>
     <name><![CDATA[fxtech]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Bluetooth Beamer Fernsteuerung]]></title>
-    <link href="http://fxtechengineering.github.io/blog/2014/12/19/bluetooth-beamer-fernsteuerung/"/>
-    <updated>2014-12-19T12:15:26+00:00</updated>
-    <id>http://fxtechengineering.github.io/blog/2014/12/19/bluetooth-beamer-fernsteuerung</id>
+    <link href="http://fxtechengineering.github.io/blog/2014/08/24/bluetooth-beamer-fernsteuerung/"/>
+    <updated>2014-08-24T12:15:26+00:00</updated>
+    <id>http://fxtechengineering.github.io/blog/2014/08/24/bluetooth-beamer-fernsteuerung</id>
     <content type="html"><![CDATA[<p>Viele Beamer bieten die Möglichkeit der Steuerung via RS-232-Schnittstelle. Mithilfe eines Bluetooth-Seriell-Wandlers (HC-06) sowie eines Pegelwandlers wird im Folgenden eine Bluetooth-Schnittstelle zur Fernsteuerung per Android App entwickelt.</p>
 
 <h2>Hardware</h2>

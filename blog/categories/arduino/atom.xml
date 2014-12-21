@@ -4,7 +4,7 @@
   <title><![CDATA[Category: arduino | fxtech]]></title>
   <link href="http://fxtechengineering.github.io/blog/categories/arduino/atom.xml" rel="self"/>
   <link href="http://fxtechengineering.github.io/"/>
-  <updated>2014-12-20T16:15:44+00:00</updated>
+  <updated>2014-12-21T11:48:34+00:00</updated>
   <id>http://fxtechengineering.github.io/</id>
   <author>
     <name><![CDATA[fxtech]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Cordwood Puzzle Gmail-Anzeige]]></title>
-    <link href="http://fxtechengineering.github.io/blog/2014/12/20/cordwood-puzzle-gmail-anzeige/"/>
-    <updated>2014-12-20T15:16:22+00:00</updated>
-    <id>http://fxtechengineering.github.io/blog/2014/12/20/cordwood-puzzle-gmail-anzeige</id>
+    <link href="http://fxtechengineering.github.io/blog/2014/03/07/cordwood-puzzle-gmail-anzeige/"/>
+    <updated>2014-03-07T15:16:22+00:00</updated>
+    <id>http://fxtechengineering.github.io/blog/2014/03/07/cordwood-puzzle-gmail-anzeige</id>
     <content type="html"><![CDATA[<p>Diese Anleitung zeigt den Aufbau einer Benachrichtigungsanzeige für Gmail aus folgenden Komponenten:</p>
 
 <ul>
@@ -32,7 +32,7 @@
 
 <p>Die sechs LEDs werden über separate Pins vom Arduino gesteuert. Für den Einsatz als Gmail-Anzeige wird eine einfache Ampelschaltung vorgesehen.</p>
 
-<pre><code class="c Arduino Firmware http://fluuux.de/2012/09/wir-basteln-uns-einen-arduino-gmail-notifier/">/*
+<pre><code class="c Arduino Firmware /downloads/getgmail.ino">/*
   GetGMail
   Dieses Sketch wartet auf ankommende Signale überd en seriellen Port
   Wird ein M empfangen dann fängt eine RGB LED an im Takt zu blinken und
@@ -133,7 +133,7 @@ void getNewMails(int Pause)
 <p style="text-align:center;"><strong>Abbildung 2: Gmail-Anzeige mit CordwoodPuzzle</strong></p>
 
 <p>:
-&#8220;` python Python-Skript für Gmail-Abruf</p>
+&#8220;` python Python-Skript für Gmail-Abruf /downloads/check-gmail.py</p>
 
 <h1>!/usr/bin/python2.7</h1>
 
@@ -193,9 +193,9 @@ else:
   
   <entry>
     <title type="html"><![CDATA[Intelligenter Beschleunigungssensor]]></title>
-    <link href="http://fxtechengineering.github.io/blog/2014/12/20/intelligenter-beschleunigungssensor/"/>
-    <updated>2014-12-20T08:14:16+00:00</updated>
-    <id>http://fxtechengineering.github.io/blog/2014/12/20/intelligenter-beschleunigungssensor</id>
+    <link href="http://fxtechengineering.github.io/blog/2013/12/02/intelligenter-beschleunigungssensor/"/>
+    <updated>2013-12-02T08:14:16+00:00</updated>
+    <id>http://fxtechengineering.github.io/blog/2013/12/02/intelligenter-beschleunigungssensor</id>
     <content type="html"><![CDATA[<p>Ziel dieses Projektes ist es die Beschleunigung in 3 Achsen zu messen und numerisch, sowie grafisch auszugeben. Die Beschleunigung ist eine physikalische Größe die in vielen Bereichen der Technik eine wichtige Rolle spielt, sodass sich etliche denkbare Anwendungsszenarien ergeben.</p>
 
 <h2>Hardware</h2>
