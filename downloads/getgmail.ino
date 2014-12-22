@@ -23,8 +23,7 @@ int DELAY    = 200;      // Intervall zwischen Wechsel der Farben
 
 void setup ()
 {
-  //Pinmodes of the leds
-
+  // Init Led's
   pinMode(greenled_1, OUTPUT);
   pinMode(yellowled_1, OUTPUT);
   pinMode(redled_1, OUTPUT);
@@ -61,13 +60,9 @@ void getNewMails(int Pause)
       digitalWrite(greenled_2, HIGH);
       digitalWrite(redled_1, LOW);      // Red off
       digitalWrite(redled_2, LOW);
-      digitalWrite(yellowled_1, LOW);   // Yellow off
-      digitalWrite(yellowled_2, LOW);
       delay(Pause);
       digitalWrite(greenled_1, LOW);    // Green off
-      digitalWrite(greenled_2, LOW);    
-      digitalWrite(redled_1, LOW);      // Red off
-      digitalWrite(redled_2, LOW);
+      digitalWrite(greenled_2, LOW);
       digitalWrite(yellowled_1, HIGH);  // Yellow on
       digitalWrite(yellowled_2, HIGH);
       delay(Pause);
@@ -75,8 +70,6 @@ void getNewMails(int Pause)
       digitalWrite(redled_2, HIGH);
       digitalWrite(yellowled_1, LOW);   // Yellow off
       digitalWrite(yellowled_2, LOW);
-      digitalWrite(greenled_1, LOW);    // Green off
-      digitalWrite(greenled_2, LOW);
       delay(Pause);
     }
     else
